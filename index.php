@@ -17,6 +17,7 @@ if ( ! class_exists( 'Testing' ) ) {
 	class Test {
 		public static function init() {
 			add_action( 'wp_head', array( __CLASS__, 'covert_to_quote' ), 10 );
+			add_action( 'wp_head', array( __CLASS__, 'print_name' ), 10 );
 		}
 
 		public static function covert_to_quote() {
@@ -27,6 +28,10 @@ if ( ! class_exists( 'Testing' ) ) {
 				'name4' => 'test4',
 			);
 			extract( $array );
+		}
+
+		public static function print_name() {
+			echo 'Welcome';
 		}
 	}
 
